@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Запускаем линтер/форматтер только по изменённым файлам
+npx lint-staged
+
+# Тесты запускать только если скрипт test есть в package.json
+npm test --if-present
